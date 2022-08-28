@@ -130,10 +130,10 @@ dbc_css = (
     "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates@V1.0.1/dbc.min.css"
 )
 
-load_figure_template("VAPOR")
+load_figure_template("MORPH")
 
 # => app dashboard 
-app = Dash(__name__, external_stylesheets=[dbc.themes.VAPOR])
+app = Dash(__name__, external_stylesheets=[dbc.themes.MORPH])
 server = app.server
 
 df = variable_riego_info_dframe(def_fecha := '2022-08-23')
@@ -178,7 +178,7 @@ app.layout = html.Div(children=[
     #html.H1('Visualización de los resultados del Sistema de Riego'),
     dbc.Row(
         [
-            #dbc.Col(ThemeChangerAIO(aio_id="theme", radio_props={"value":dbc.themes.VAPOR}), width=2,),
+            dbc.Col(ThemeChangerAIO(aio_id="theme", radio_props={"value":dbc.themes.MORPH}), width=2,),
             dbc.Col(selectorFecha),
             dbc.Col(botonEjecutar),
         ],
